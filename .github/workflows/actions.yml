@@ -2,6 +2,17 @@ name: Actions Workflows
 
 on: 
   push:
+    branches:
+      - master
+      - "feature/*" # matches features/featA, feature/featb, dosen't match feature/feat/a
+      - 'feature/**'
+      - "!features/featc"
+    tags:
+      - v1.*
+    paths: 
+      - '**.js'
+  schedule:
+    - cron: "0 12 * * *"
   pull_request:
     types: [closed, assigned, opened, reopened]
 
