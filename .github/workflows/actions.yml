@@ -1,7 +1,7 @@
 name: Actions Workflows
 
 on: 
-  push:
+  pull_request_review:
     branches:
       - master
       - "feature/*" # matches features/featA, feature/featb, dosen't match feature/feat/a
